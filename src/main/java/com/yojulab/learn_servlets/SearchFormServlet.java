@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-import com.yojulab.learn_servlets.beans.MembersBean;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
