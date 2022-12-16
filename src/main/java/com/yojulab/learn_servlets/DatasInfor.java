@@ -35,7 +35,6 @@ public class DatasInfor {
         bundlesData.put("dataWithMamberBean", datasInfor.getDataWithMamberBean());
         bundlesData.put("dataListWithMemberBean", datasInfor.getDataListWithMemberBean());
 
-
         return bundlesData;
     }
 

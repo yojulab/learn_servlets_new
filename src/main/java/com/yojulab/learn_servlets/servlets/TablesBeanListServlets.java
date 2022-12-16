@@ -51,12 +51,25 @@ public class TablesBeanListServlets extends HttpServlet{
         printWriter.println("            <thead>");
         printWriter.println("                <tr>");
         printWriter.println("                    <th scope=>#</th>");
-        // printWriter.println("                    <th scope=>First</th>");
-        // printWriter.println("                    <th scope=>Last</th>");
+        printWriter.println("                    <th scope=>First</th>");
+        printWriter.println("                    <th scope=>Last</th>");
         printWriter.println("                    <th scope=>Handle</th>");
         printWriter.println("                </tr>");
         printWriter.println("            </thead>");
         printWriter.println("            <tbody>");
+        
+        ArrayList<MemberBean> dataListWithMemberBean = (ArrayList<MemberBean>) bundlesData.get("dataListWithMemberBean");
+
+        for(int i=0; i<dataListWithMemberBean.size(); i++){
+            MemberBean memberBean = dataListWithMemberBean.get(i);
+            printWriter.println("                <tr>");
+            printWriter.println("                    <th scope=>"+(i+1)+"</th>");
+            String handle = memberBean.getHandleName();
+            printWriter.println("                    <td>"+memberBean.getFirstName()+"</td>");
+            printWriter.println("                    <td>"+memberBean.getSecondName()+"</td>");
+            printWriter.println("                    <td>"+handle+"</td>");
+            printWriter.println("                </tr>");
+        }
         printWriter.println("            </tbody>");
         printWriter.println("        </table>");
         printWriter.println("    </div>");
