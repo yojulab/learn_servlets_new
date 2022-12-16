@@ -2,6 +2,7 @@ package com.yojulab.learn_servlets.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,7 +22,8 @@ public class TablesBeanListServlets extends HttpServlet{
         throws ServletException, IOException {
             
         DatasInfor datasInfor = new DatasInfor();
-        MemberBean memberBean = datasInfor.getDataWithMamberBean();
+        // MemberBean memberBean = datasInfor.getDataWithMamberBean();
+        HashMap<String, Object> bundlesData = datasInfor.getBundlesData();
 
         // Display areas
         PrintWriter printWriter = response.getWriter();
@@ -38,8 +40,12 @@ public class TablesBeanListServlets extends HttpServlet{
         printWriter.println("<body>");
         printWriter.println("    <div class='container'>");
         printWriter.println("        <div class='fs-3'>Tables with Bean</div>");
-        printWriter.println("<div class='fs-4'>"+memberBean.getFirstName() + " " + memberBean.getSecondName() 
-                            + " " + memberBean.getHandleName()+"</div>");
+
+        MemberBean memberBean2 = (MemberBean) bundlesData.get("dataWithMamberBean");
+        printWriter.println(memberBean2.getFirstName() + " " + memberBean2.getSecondName() 
+        + " " + memberBean2.getHandleName());
+        // printWriter.println(memberBean.getFirstName() + " " + memberBean.getSecondName() 
+        // + " " + memberBean.getHandleName());
 
         printWriter.println("        <table class='table'>");
         printWriter.println("            <thead>");
