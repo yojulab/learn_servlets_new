@@ -55,17 +55,17 @@ public class DatasInfor {
         memberBean.setHandleName("@mdo");
         membersList.add(memberBean);
 
-        MemberBean memberBean02 = new MemberBean();
-        memberBean02.setFirstName("Jacob");
-        memberBean02.setSecondName("Thornton");
-        memberBean02.setHandleName("@fat");
-        membersList.add(memberBean02);
+        memberBean = new MemberBean();
+        memberBean.setFirstName("Jacob");
+        memberBean.setSecondName("Thornton");
+        memberBean.setHandleName("@fat");
+        membersList.add(memberBean);
 
-        MemberBean memberBean03 = new MemberBean();
-        memberBean03.setFirstName("Larry");
-        memberBean03.setSecondName("Bird");
-        memberBean03.setHandleName("@twitter");
-        membersList.add(memberBean03);
+        memberBean = new MemberBean();
+        memberBean.setFirstName("Larry");
+        memberBean.setSecondName("Bird");
+        memberBean.setHandleName("@twitter");
+        membersList.add(memberBean);
         return membersList;
     }
 }
