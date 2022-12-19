@@ -15,9 +15,10 @@ public class SimpleWithDB {
         // 설문과 답항 내용 출력
         String query = "SELECT * FROM questions_list " +
                 "ORDER BY ORDERS";
+        ArrayList<HashMap> bundle_list = new ArrayList<>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            ArrayList<HashMap> bundle_list = new ArrayList<>();
+            
             while (resultSet.next()) {
                 // 설문 문항에 맞는 설문 답항 출력
                 System.out.print(resultSet.getInt("ORDERS") + ". ");
