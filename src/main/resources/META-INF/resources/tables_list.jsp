@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <%@ include file="navbars.jsp" %>
     <% 
         HashMap<String, String> searchForm = (HashMap<String, String>)request.getAttribute("searchForm"); 
         ArrayList<String> tablesListWithString = (ArrayList<String>)request.getAttribute("tablesListWithString");
