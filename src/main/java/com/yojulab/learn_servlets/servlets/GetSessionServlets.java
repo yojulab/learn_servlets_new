@@ -9,22 +9,24 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns="/cookies/createServlets")
-public class CreateCookieServlets extends HttpServlet{
+// /session/createServlets?username=yojulab&password=1234
+@WebServlet(urlPatterns="/session/getServlets")
+public class GetSessionServlets extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        // Cookie
-        Cookie cookie_first = new Cookie("firstName", "Yoju");
-        Cookie cookie_second = new Cookie("secondName", "Lab");
-        response.addCookie(cookie_first);
-        response.addCookie(cookie_second);
         // display
         PrintWriter printWriter = response.getWriter();
-        String content = "<div>CreateCookieServlets</div>";
-        printWriter.println(content);
+        printWriter.println("<div>Get Session Servlets</div>");
+        // login 
+        HttpSession httpSession = request.getSession();
+        String username = (String) httpSession.getAttribute("username");
+        String password = (String) httpSession.getAttribute("password");
+
+        printWriter.println("<div>"+username+", "+password+"</div>");
         printWriter.close();
     }
 }
