@@ -27,22 +27,30 @@ public class CreateSessionJSPServlets extends HttpServlet{
         HttpSession httpSession = null;
         HttpSession httpSession_false = null;
 
-        httpSession_false = request.getSession(false);
-        httpSession = request.getSession();
+        // Not EXISTS JSESSIONID 
+        // httpSession_false = request.getSession(false);  // Null
+        // httpSession = request.getSession();  // 무조건 인스턴스화 
+
+        // EXISTS JSESSIONID 
+        // httpSession_false = request.getSession(false);  // 존재하면 인스턴스화
+        // httpSession = request.getSession();  // 무조건 인스턴화
 
         String path = null;
         if("yojulab".equals(username) && "1234".equals(password)){
             // login
-            if (httpSession != null){
+            httpSession = request.getSession(false);  // 존재하면 인스턴스화
+            if (httpSession == null){
+                httpSession = request.getSession();  // 무조건 인스턴화
                 httpSession.setAttribute("username", username);
                 httpSession.setAttribute("password", password);
             }
             path = "/session/checkLogin.jsp";
         } else {
             // logout
-            httpSession_false = request.getSession(false);
-            httpSession = request.getSession();
-            httpSession.invalidate();
+            httpSession = request.getSession(false);  // 존재하면 인스턴스화
+            if (httpSession != null){
+                httpSession.invalidate();
+            }
             path = "/session/checkLogout.jsp";
         }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
