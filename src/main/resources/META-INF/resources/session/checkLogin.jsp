@@ -9,10 +9,11 @@
 </head>
 
 <body>
+
     <div>Check Login</div>
-    <div>username : yojulab</div>
-    <div>password : 1234</div>
-    <div>ID : </div>
+    <div>username : <%= session.getAttribute("username") %></div>
+    <div>password : <%= session.getAttribute("password") %></div>
+    <div>ID : <%= session.getId() %></div>
 </body>
 
 </html>
