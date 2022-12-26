@@ -32,6 +32,7 @@
         %>
         <% 
             for(int i=0;i < answer_list.size();i++){ 
+                
                 HashMap<String, Object>  answer = answer_list.get(i);
         %>
         <div> (<%= answer.get("ORDERS") %>) <%= answer.get("EXAMPLE") %></div>
