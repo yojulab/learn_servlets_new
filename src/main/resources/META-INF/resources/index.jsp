@@ -75,9 +75,6 @@
             <button>/session/CreateServlets with post</button>
         </form>
     </div>
-    <div>
-        <a href="/">RootServlets.java with index.jsp</a>
-    </div>
     <div>Cases</div>
     <div>
         <a href="/polls/PollServlet?QUESTIONS_UID=Q1">DetailServlets.java /polls/details.jsp</a>
