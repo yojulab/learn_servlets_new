@@ -77,7 +77,7 @@
     </div>
     <div>Cases</div>
     <div>
-        <a href="/polls/PollServlet?QUESTIONS_UID=Q1">DetailServlets.java /polls/details.jsp</a>
+        <a href="/polls/PollServlet?QUESTIONS_UID=Q1">/polls/PollServlet?QUESTIONS_UID=Q1 DetailServlets.java /polls/details.jsp </a>
     </div>
 </body>
 

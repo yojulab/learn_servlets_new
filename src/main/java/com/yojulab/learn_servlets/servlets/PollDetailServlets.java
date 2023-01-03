@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+// /polls/PollServlet?QUESTIONS_UID=Q1
 @WebServlet(urlPatterns = "/polls/PollServlet") // web.xml
 public class PollDetailServlets extends HttpServlet {
     @Override
